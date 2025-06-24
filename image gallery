@@ -1,0 +1,59 @@
+from tkinter import *
+from PIL import ImageTk, Image
+root = Tk()
+root.title("img gallery")
+img1 = ImageTk.PhotoImage(Image.open("C:/Users/Hp/Pictures/Saved Pictures/c++ (if).png"))
+img2 = ImageTk.PhotoImage(Image.open("C:/Users/Hp/Pictures/Saved Pictures/c++.png"))
+img3 = ImageTk.PhotoImage(Image.open( "C:/Users/Hp/Pictures/Saved Pictures/py - removebg.png"))
+t_img = [img1, img2, img3]
+l = Label(image=t_img[0])
+l.grid(row=0,column=0,columnspan= 3)
+
+def next (ind) :
+    global l
+    global b_n
+    global b_e
+
+    if (ind == 2):
+        return
+
+    l.grid_forget()
+    l = Label(image= t_img[ind+1])
+    l.grid(row=0,column= 0,columnspan=3)
+
+    b_n = Button(root, text=" next", command=lambda: next(ind+1))
+    b_b = Button(root, text="back", command=lambda: back(ind+1))
+
+    b_b.grid(row=1,column=1)
+    b_n.grid(row=1,column=2)
+    return
+
+def back (ind):
+    global l
+    global b_n
+    global b_e
+
+    if (ind == 0):
+        return
+
+    l.grid_forget()
+    l = Label(image=t_img[ind - 1])
+    l.grid(row=0, column=0, columnspan=3)
+
+    b_n = Button(root, text=" next", command=lambda: next(ind - 1))
+    b_b = Button(root, text="back", command=lambda: back(ind - 1))
+
+    b_b.grid(row=1, column=1)
+    b_n.grid(row=1, column=2)
+    return
+
+
+
+b_n = Button(root,text=" next",command= lambda : next(0))
+b_b = Button(root,text="back",command= lambda : back(0))
+b_e = Button(root,text="exit",command= root.quit)
+
+b_e.grid(row=1,column=0)
+b_b.grid(row=1,column=1)
+b_n.grid(row=1,column=2)
+root.mainloop()
