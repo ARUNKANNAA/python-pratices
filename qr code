@@ -1,0 +1,3 @@
+import qrcode
+a = qrcode.make("www.youtube.com")
+a.save("yt.jpg")
