@@ -1,0 +1,6 @@
+from tkinter import *
+root = Tk()
+
+b_e = Button(root,text="exit",command= root.quit)
+b_e.pack()
+root.mainloop()
