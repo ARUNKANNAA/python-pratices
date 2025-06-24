@@ -1,0 +1,22 @@
+
+from groq import Groq
+
+api = "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"
+
+client = Groq(
+    api_key=api)
+
+t = input("enter text :")
+text = t + "is this news true yes or no ? if no give me the correct news"
+
+chat = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": text,
+        }
+    ],
+    model="llama3-8b-8192",
+)
+
+print(chat.choices[0].message.content)
