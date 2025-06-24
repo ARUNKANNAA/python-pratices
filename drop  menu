@@ -1,0 +1,8 @@
+from tkinter import *
+from PIL import ImageTk, Image
+root = Tk()
+days = ["monday","tuesday","wednesday","thursday"]
+a = StringVar()
+a.set("monday")
+d = OptionMenu(root,a,*days).pack()
+root.mainloop()
