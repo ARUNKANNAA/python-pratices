@@ -1,0 +1,58 @@
+from cvzone.SerialModule import SerialObject
+from time import sleep
+from groq import Groq
+
+Arduino = SerialObject("COM5")
+
+api = "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"
+
+client = Groq(
+    api_key=api)
+
+t = input("enter text :")
+text = t + "answer with only yes or no ? "
+
+chat = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": text,
+            #"content": t,
+        }
+    ],
+    model="llama3-8b-8192",
+)
+
+p = ((chat.choices[0].message.content).lower())
+print(p)
+if(p == "no"):
+    chat = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                #"content": text,
+                "content": t,
+            }
+        ],
+        model="llama3-8b-8192",
+    )
+
+    print((chat.choices[0].message.content))
+    Arduino.sendData([1, 0])
+else:
+    print("It is not a fake news")
+    Arduino.sendData([0, 1])
+
+
+arduino code :
+
+from cvzone.SerialModule import SerialObject
+from time import sleep
+
+Arduino = SerialObject("COM5")
+
+while True :
+    Arduino.sendData([1,0])
+    sleep(3)
+    Arduino.sendData([0,1])
+    sleep(1)
