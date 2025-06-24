@@ -1,0 +1,294 @@
+"""
+#task 1
+for i in range (1,101):
+  if (i != 77):
+      if (i != 86 ):
+          if (i != 32):
+              print(i)
+
+#task 3
+name = input("Enter your name :")
+print("enter the marks you scored : ")
+marks = ["m1","m2","m3","m4","m5"]
+m = []
+for i in marks :
+    while True :
+        a = int(input(i))
+        if (a >= 100):
+            print("enter correct mark")
+        else:
+            m.append(a)
+            break
+
+print(sum(m))
+
+#task 2
+x = ['a','b','c']
+for i in x :
+    print(i)
+    for j in x:
+        if (i!=j):
+            print(i,j)
+        else :
+            continue
+
+#task 4
+import datetime
+now = datetime.datetime.now()
+a = now.hour
+if (a >= 0 & a <= 12):
+    print("good morning")
+elif(a>12 & a <= 9):
+    print("good evening")
+else :
+    print("good night")
+
+#task 5
+x=[]
+while True :
+    n = input("enter your friends name : ")
+    x.append(n)
+    print("Do you want to add another friend ? (yes/no)")
+    a = input("enter yes or no :")
+    if(a== "yes"):
+        continue
+    else:
+        break
+for i in x:
+    print(i,end=",")
+print("we are all togather and spread love")
+
+#task 6
+d = int(input("km to be travelled : "))
+p = d*30
+print("you need",p,"liter petrol to trave ",d,"kms")
+
+#task 7
+n = int(input ("enter your no. of goals :"))
+a = []
+for i in range(n):
+    g = input("enter your goals :")
+    a.append(g)
+a.sort()
+print(a)
+
+
+#task 8
+a = ["ml", "fd", "ro"]
+n = input("Choose your domain: ")
+x= []
+for i in a:
+    x.append(i)
+    if(i != n):
+        x.remove(i)
+print(x)
+
+
+#task 9
+n = float(input("enter time : "))
+if (n >= 8.00 and n <= 9.30):
+    print("python")
+elif(n >= 9.30 and n <= 9.45):
+    print("break")
+elif(n>= 9.45 and n <= 11.15):
+    print("physics lab")
+elif(n >= 11.15 and n<= 12.00):
+    print("LUNCH")
+elif(n >= 12.00 and n <= 12.45 ):
+    print("Maths")
+elif(n >= 12.45 and n > 13.00 ):
+    print("English")
+else :
+    ("class over")
+
+#task 10
+para = input ("Enter a paragraph : ")
+x = para.split()
+a = set(x)
+n = list(a)
+l = []
+for i in n :
+    for j in i :
+        l.append(j)
+print(len(n))
+lett = set(l)
+finw = list(lett)
+print(len(finw)
+
+#task 11
+import random
+a = random.randint(1,10)
+n = int(input("Enter a number : "))
+if(a == n) :
+    print("you won")
+else:
+    print("try again")
+
+#task 12
+a = int(input("enter train compartment ft : "))
+com = 10//a
+comno = int(input("enter com ft : "))
+if (a = )
+
+
+x =7
+y = 1
+c = x*2**y
+print(c)
+print(x<<y)
+
+
+#Task 14
+n = []
+print("num :")
+while True :
+    x = int(input())
+    n.append(x)
+    z = input("a to break :")
+    if z == "a" :
+        break
+n.sort()
+print(n)
+n.sort(reverse=True)
+print(n)
+"""
+"""
+x = 1j
+print(x)
+print(type(x))
+
+x = 5
+y = 3
+print(x==y)
+
+import math
+n = int(input())
+p = (math.sqrt(n))
+print(type(p))
+k = math.ceil(p)
+print(k)
+n =(8,9,11,20)
+a = 1
+for m in n :
+    a = a*m
+print(a)
+
+for i in range(4):
+    if i== 3:
+        break
+        print(x)
+    else :
+        print("a")
+s1 = "IIt"
+s2 = "punjab"
+s1 = s1*2
+s2="ropar"
+print(s1,s2)
+if 1-1 :
+    print("p")
+else:
+p =[]
+a = 0
+b = 1
+for i in range(10):
+    p.append(a)
+    c = a+b
+    a = b
+    b =c
+print(p)
+
+n1 = int(input())
+n2 = int(input())
+a = []
+for i in range(n1,n2+1):
+    for j in range(2,n2+1):
+        if(i%j == 0):
+            a.append(i)
+l =[]
+for t in a :
+    f = a.count(t)
+    if(f<= 1):
+        l.append(t)
+print(l)
+
+m = input()
+x = []
+for a in m:
+    x.append(a)
+p = (m.index("@"))
+d = m.index(".")
+print(x[:p])
+print(x[p+1:d])
+print(x[d+1:]) 
+#s = "Welcome"+1+2+3
+#print(s)
+
+#print(ord("C"))
+line = "I'll come by then."
+eline = ""
+for i in line:
+    eline += chr (ord (i) +3)
+print (eline)
+n2 = int(input())
+a = []
+for i in range(1,n2+1):
+    for j in range(2,n2+1):
+        if(i%j == 0):
+            a.append(i)
+l =[]
+for t in a :
+    f = a.count(t)
+    if(f<= 1):
+        l.append(t)
+print(l)
+
+
+x =[]
+n = int(input())
+for i in range(n) :
+    x.append(int(input()))
+p = []
+try:
+    for j in range(len(x)) :
+        f = (x[i] - x[i+1])
+        if(f > 0):
+            print(f)
+            p.append(x[i])
+except :
+    if(f > 0):
+            print(f)
+            p.append(x[i])
+    print(p)
+
+f = open("text/in.txt","r")
+print(f.read())
+f.close()
+
+l = []
+l += "hello"
+print(l)
+
+#task tq2
+n = input()
+a = set(n)
+x = []
+for i in a:
+    x.append(n.count(i))
+print(max(x))
+"""
+l = [1,2,3,4]
+
+try:
+    for i in range(len(l)):
+        p = l[i] + l[i + 1]  # Calculate sum of consecutive elements
+        if p == 6:
+            print(i, i + 1)
+except IndexError as e:
+    print("IndexError encountered:", e)
+finally:
+    try:
+        print(f"Final value of i: {i}, Index of first occurrence of 3: {l.index(3)}")
+    except Exception as e:
+        print("An error occurred in finally block:", e)
+
+
