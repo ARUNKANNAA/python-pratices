@@ -1,0 +1,5 @@
+from rembg import remove
+from PIL import Image
+a = Image.open("C:/Users/Hp/Pictures/Screenshots/Screenshot 2023-09-10 085334.png")
+b = remove(a)
+b.save("C:/Users/Hp/Pictures/temp/4.png")
