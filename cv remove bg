@@ -1,0 +1,18 @@
+import cv2
+import cvzone
+from cvzone.SelfiSegmentationModule import SelfiSegmentation
+import os
+
+cap = cv2.VideoCapture(0)
+cap.set(3,640)
+cap.set(4,480)
+seg = SelfiSegmentation()
+bg = cv2.imread("resized_image.jpg")
+
+
+while True:
+    success ,img = cap.read()
+    io = seg.removeBG(img,bg ,cutThreshold=0.75)
+    ims = cvzone.stackImages([img,io],2,1)
+    cv2.imshow("image",ims)
+    cv2.waitKey(1)
